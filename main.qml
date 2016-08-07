@@ -75,7 +75,7 @@ Application {
                 return qsTr("Today");
                 break;
             case 1:
-                return qsTr("Tomorow");
+                return qsTr("Tomorrow");
                 break;
             default:
                 return Qt.formatDate(new Date(new Date().getTime() + i * 1000*60*60*24), "dddd");
