@@ -16,12 +16,18 @@
  */
 
 #include <QQuickView>
+#include <QTranslator>
 #include <QGuiApplication>
 #include <MDeclarativeCache>
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QScopedPointer<QGuiApplication> app(MDeclarativeCache::qApplication(argc, argv));
+
+    QTranslator translator;
+    translator.load(QLocale(), "asteroid-weather", ".", "/usr/share/translations", ".qm");
+    app->installTranslator(&translator);
+
     QScopedPointer<QQuickView> view(MDeclarativeCache::qQuickView());
     view->setSource(QUrl("qrc:/main.qml"));
     view->setTitle("Weather");

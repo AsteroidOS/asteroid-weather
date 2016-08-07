@@ -7,6 +7,10 @@ SOURCES +=     main.cpp
 RESOURCES +=   resources.qrc
 OTHER_FILES += main.qml
 
+lupdate_only{
+    SOURCES = main.qml
+}
+
 TARGET = asteroid-weather
 target.path = /usr/bin/
 
