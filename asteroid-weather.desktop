@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Weather
+Name[de_DE]=Wetter
+Name[es_ES]=Clima
+Name[nl_NL]=Weer
+Name[fr_FR]=Météo
+Categories=Applications;
+Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-weather
+Icon=gnome-weather
+X-Desktop-File-Install-Version=0.20

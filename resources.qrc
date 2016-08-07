@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>PageDot.qml</file>
+        <file>icons.js</file>
+    </qresource>
+</RCC>
