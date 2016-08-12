@@ -6,7 +6,7 @@
     <message>
         <location filename="asteroid-weather.desktop.h" line="5"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>Počasie</translation>
     </message>
 </context>
 <context>
