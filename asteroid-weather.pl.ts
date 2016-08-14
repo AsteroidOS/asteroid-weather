@@ -11,7 +11,7 @@
     <message>
         <location filename="main.qml" line="75"/>
         <source>Today</source>
-        <translation>Dzisiaj</translation>
+        <translation>Dziś</translation>
     </message>
     <message>
         <location filename="main.qml" line="78"/>
@@ -39,7 +39,7 @@
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
         <translation>&lt;h3&gt;Brak danych&lt;/h3&gt;
-Synchronizacja AsteroidOS z twoim telefonem.</translation>
+Synchronizuj AsteroidOS z twoim telefonem.</translation>
     </message>
 </context>
 </TS>
