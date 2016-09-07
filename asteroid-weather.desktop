@@ -8,5 +8,5 @@ Name[nl_NL]=Weer
 Name[pl_PL]=Pogoda
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-weather
-Icon=gnome-weather
+Icon=ios-cloudy-outline
 X-Desktop-File-Install-Version=0.20
