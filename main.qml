@@ -182,7 +182,7 @@ Application {
     Icon {
         visible: availableDays(timestampDay0.value*1000) <= 0
         color: "white"
-        name: "sync"
+        name: "ios-sync"
         anchors.top: parent.top
         anchors.topMargin: Units.dp(16)
         anchors.horizontalCenter: parent.horizontalCenter
