@@ -6,17 +6,17 @@
     <message>
         <location filename="main.qml" line="42"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>نەزانراو</translation>
     </message>
     <message>
         <location filename="main.qml" line="75"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>ئەمڕۆ</translation>
     </message>
     <message>
         <location filename="main.qml" line="78"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>سبەی</translation>
     </message>
     <message>
         <location filename="main.qml" line="120"/>
@@ -27,12 +27,12 @@
         <location filename="main.qml" line="120"/>
         <location filename="main.qml" line="142"/>
         <source>°C</source>
-        <translation type="unfinished"></translation>
+        <translation>سیلیزی°</translation>
     </message>
     <message>
         <location filename="main.qml" line="142"/>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>زۆرترین:</translation>
     </message>
     <message>
         <location filename="main.qml" line="194"/>
