@@ -10,4 +10,5 @@ Name[ru_RU]=погода
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-weather
 Icon=ios-cloudy-outline
-X-Desktop-File-Install-Version=0.20
+X-Asteroid-Center-Color=#dfb103
+X-Asteroid-Outer-Color=#be4e0e
