@@ -23,8 +23,8 @@ import 'qrc:/icons.js' as IconTools
 Application {
     id: app
 
-    centerColor: "#dfb103"
-    outerColor: "#be4e0e"
+    centerColor: "#C91C1C"
+    outerColor: "#4C0000"
 
     FontLoader {
         id: weatherFont
