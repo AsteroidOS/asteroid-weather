@@ -190,7 +190,9 @@ Application {
         color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        anchors.centerIn: parent
+        wrapMode: Text.Wrap
+        anchors.left: parent.left; anchors.right: parent.right
+        anchors.verticalCenter: parent.verticalCenter
     }
 }
 
