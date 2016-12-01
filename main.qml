@@ -174,25 +174,39 @@ Application {
         dotNumber: availableDays(timestampDay0.value*1000)
     }
 
+    Rectangle {
+        id: noDataBackground
+        visible: availableDays(timestampDay0.value*1000) <= 0
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: -parent.height*0.13
+        color: "black"
+        radius: width/2
+        opacity: 0.2
+        width: parent.height*0.25
+        height: width
+    }
     Icon {
         visible: availableDays(timestampDay0.value*1000) <= 0
+        size: width
+        anchors.fill: noDataBackground
+        anchors.margins: parent.height*0.03
         color: "white"
         name: "ios-sync"
-        anchors.top: parent.top
-        anchors.topMargin: Units.dp(16)
-        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     Text {
         id: noDataText
         visible: availableDays(timestampDay0.value*1000) <= 0
         text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
+        font.pixelSize: parent.height*0.05
         color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.Wrap
         anchors.left: parent.left; anchors.right: parent.right
+        anchors.leftMargin: width*0.02; anchors.rightMargin: width*0.02
         anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: parent.height*0.15
     }
 }
 
