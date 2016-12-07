@@ -6,6 +6,7 @@ Name[es_ES]=Clima
 Name[fr_FR]=Météo
 Name[nl_NL]=Weer
 Name[pl_PL]=Pogoda
+Name[sv_SV]=Väder
 Name[ru_RU]=погода
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-weather
