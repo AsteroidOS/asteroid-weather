@@ -6,8 +6,10 @@ Name[es_ES]=Clima
 Name[fr_FR]=Météo
 Name[nl_NL]=Weer
 Name[pl_PL]=Pogoda
+Name[sv_SV]=Väder
 Name[ru_RU]=погода
 Categories=Applications;
-Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-weather
+Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-weather
 Icon=ios-cloudy-outline
-X-Desktop-File-Install-Version=0.20
+X-Asteroid-Center-Color=#C91C1C
+X-Asteroid-Outer-Color=#4C0000
