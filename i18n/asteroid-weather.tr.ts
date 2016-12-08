@@ -6,7 +6,7 @@
     <message>
         <location filename="asteroid-weather.desktop.h" line="5"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>Hava</translation>
     </message>
 </context>
 <context>
@@ -39,7 +39,7 @@
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
         <translation>&lt;h3&gt;Veri Yok&lt;/h3&gt;
-AsteroidOS&apos;u telefonunuzla senkronize edin.</translation>
+AsteroidOS'u telefonunuzla senkronize edin.</translation>
     </message>
 </context>
 </TS>
