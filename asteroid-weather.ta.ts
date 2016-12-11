@@ -39,7 +39,7 @@
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
         <translation>&lt;h3&gt;தரவு இல்லை&lt;/h3&gt;
-AsteroidOS-ஐ உங்கள் சாதனத்துடன் ஒத்திசைக்கவும்.</translation>
+AsteroidOS ஐ உங்கள் சாதனத்துடன் ஒத்திசைக்கவும்.</translation>
     </message>
 </context>
 </TS>
