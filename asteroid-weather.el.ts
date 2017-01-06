@@ -38,8 +38,8 @@
         <location filename="main.qml" line="194"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation>&lt;h3&gt;Χωρίς δεδομένα&lt;/h3&gt;
-Συγχρονισμός AsteroidOS με το τηλέφωνό σου.</translation>
+        <translation>&lt;h3&gt;Καθόλου δεδομένα&lt;/h3&gt;
+Συγχρονίστε το AsteroidOS με το τηλέφωνο σας.</translation>
     </message>
 </context>
 </TS>
