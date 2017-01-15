@@ -10,6 +10,7 @@ Name[pl]=Pogoda
 Name[pt_BR]=Clima
 Name[sv]=Väder
 Name[ru]=погода
+Name[fa]=وضع هوا
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-weather
 Icon=ios-cloudy-outline
