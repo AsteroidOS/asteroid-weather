@@ -21,7 +21,7 @@
     <message>
         <location filename="main.qml" line="120"/>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation>Mín:</translation>
     </message>
     <message>
         <location filename="main.qml" line="120"/>
@@ -32,14 +32,14 @@
     <message>
         <location filename="main.qml" line="142"/>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation>Máx:</translation>
     </message>
     <message>
         <location filename="main.qml" line="194"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
         <translation>&lt;h3&gt;Sem dados&lt;/h3&gt;
-Sincronize o AsteroidOS com o telefone.</translation>
+Sincronize o AsteroidOS com o seu telefone.</translation>
     </message>
 </context>
 </TS>
