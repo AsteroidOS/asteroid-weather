@@ -3,14 +3,15 @@ Type=Application
 Name=Weather
 Name[de_DE]=Wetter
 Name[es]=Clima
+Name[fa]=وضع هوا
 Name[fr]=Météo
 Name[ko]=날씨
 Name[nl_NL]=Weer
 Name[pl]=Pogoda
 Name[pt_BR]=Clima
-Name[sv]=Väder
 Name[ru]=погода
-Name[fa]=وضع هوا
+Name[sv]=Väder
+Name[uk]=Погода
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-weather
 Icon=ios-cloudy-outline
