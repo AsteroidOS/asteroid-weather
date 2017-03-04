@@ -41,6 +41,7 @@ target.path = /usr/bin/
 desktop.commands = bash $$PWD/i18n/generate-desktop.sh $$PWD asteroid-weather.desktop
 desktop.files = $$OUT_PWD/asteroid-weather.desktop
 desktop.path = /usr/share/applications
+desktop.CONFIG = no_check_exist
 
 fonts.files = weathericons-regular-webfont.ttf
 fonts.path = /usr/lib/fonts/
