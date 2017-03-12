@@ -13,32 +13,32 @@
     <name>main</name>
     <message>
         <source>Unknown</source>
-        <translation type="vanished">Unbekannt</translation>
+        <translation>Unbekannt</translation>
     </message>
     <message>
         <source>Today</source>
-        <translation type="vanished">Heute</translation>
+        <translation>Heute</translation>
     </message>
     <message>
         <source>Tomorrow</source>
-        <translation type="vanished">Morgen</translation>
+        <translation>Morgen</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="vanished">Min:</translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>°C</source>
-        <translation type="vanished">°C</translation>
+        <translation>°C</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="vanished">Max:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation type="vanished">&lt;h3&gt;Keine Daten&lt;/h3&gt;
+        <translation>&lt;h3&gt;Keine Daten&lt;/h3&gt;
 Synchronisiere AsteroidOS mit deinem Telefon.</translation>
     </message>
 </context>

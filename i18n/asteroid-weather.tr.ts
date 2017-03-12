@@ -13,32 +13,32 @@
     <name>main</name>
     <message>
         <source>Unknown</source>
-        <translation type="vanished">Bulunamadı</translation>
+        <translation>Bulunamadı</translation>
     </message>
     <message>
         <source>Today</source>
-        <translation type="vanished">Bugün</translation>
+        <translation>Bugün</translation>
     </message>
     <message>
         <source>Tomorrow</source>
-        <translation type="vanished">Yarın</translation>
+        <translation>Yarın</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="vanished">En Az:</translation>
+        <translation>En Az:</translation>
     </message>
     <message>
         <source>°C</source>
-        <translation type="vanished">°C</translation>
+        <translation>°C</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="vanished">En Çok:</translation>
+        <translation>En Çok:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation type="vanished">&lt;h3&gt;Veri Yok&lt;/h3&gt;
+        <translation>&lt;h3&gt;Veri Yok&lt;/h3&gt;
 AsteroidOS&apos;u telefonunuzla senkronize edin.</translation>
     </message>
 </context>
