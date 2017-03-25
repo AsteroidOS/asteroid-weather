@@ -13,23 +13,23 @@
     <name>main</name>
     <message>
         <source>Unknown</source>
-        <translation type="vanished">نەزانراو</translation>
+        <translation>نەزانراو</translation>
     </message>
     <message>
         <source>Today</source>
-        <translation type="vanished">ئەمڕۆ</translation>
+        <translation>ئەمڕۆ</translation>
     </message>
     <message>
         <source>Tomorrow</source>
-        <translation type="vanished">سبەی</translation>
+        <translation>سبەی</translation>
     </message>
     <message>
         <source>°C</source>
-        <translation type="vanished">سیلیزی°</translation>
+        <translation>سیلیزی°</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="vanished">زۆرترین:</translation>
+        <translation>زۆرترین:</translation>
     </message>
 </context>
 </TS>

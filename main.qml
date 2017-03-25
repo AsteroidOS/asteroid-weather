@@ -187,7 +187,6 @@ Application {
     }
     Icon {
         visible: availableDays(timestampDay0.value*1000) <= 0
-        size: width
         anchors.fill: noDataBackground
         anchors.margins: parent.height*0.03
         color: "white"
