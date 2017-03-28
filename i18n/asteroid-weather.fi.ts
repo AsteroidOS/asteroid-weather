@@ -6,39 +6,40 @@
     <message>
         <location filename="asteroid-weather.desktop.h" line="5"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>Sää</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuntematon</translation>
     </message>
     <message>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Tänään</translation>
     </message>
     <message>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Huomenna</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alin:</translation>
     </message>
     <message>
         <source>°C</source>
-        <translation type="unfinished"></translation>
+        <translation>°C</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ylin:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;No data&lt;/h3&gt;
+Synkronoi AsteroidOS puhelimeen.</translation>
     </message>
 </context>
 </TS>
