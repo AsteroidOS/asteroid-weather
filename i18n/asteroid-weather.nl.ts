@@ -38,7 +38,7 @@
     <message>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation>&lt;h3&gt;Geen data&lt;/h3&gt;
+        <translation>&lt;h3&gt;Geen gegevens&lt;/h3&gt;
 Synchroniseer AsteroidOS met je telefoon.</translation>
     </message>
 </context>
