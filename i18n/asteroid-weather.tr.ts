@@ -13,7 +13,7 @@
     <name>main</name>
     <message>
         <source>Unknown</source>
-        <translation>Bulunamadı</translation>
+        <translation>Bilinmiyor</translation>
     </message>
     <message>
         <source>Today</source>
@@ -38,8 +38,8 @@
     <message>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation>&lt;h3&gt;Veri Yok&lt;/h3&gt;
-AsteroidOS'u telefonunuzla senkronize edin.</translation>
+        <translation>&lt;h3&gt;Veri yok&lt;/h3&gt;
+AsteroidOS'u telefonunuzla eşzamanlayın.</translation>
     </message>
 </context>
 </TS>
