@@ -16,7 +16,7 @@ lupdate_only{
 TRANSLATIONS = i18n/asteroid-weather.ca.ts \
                i18n/asteroid-weather.ckb.ts \
                i18n/asteroid-weather.cs.ts \
-               i18n/asteroid-weather.de.ts \
+               i18n/asteroid-weather.de_DE.ts \
                i18n/asteroid-weather.el.ts \
                i18n/asteroid-weather.es.ts \
                i18n/asteroid-weather.fa.ts \
@@ -25,7 +25,7 @@ TRANSLATIONS = i18n/asteroid-weather.ca.ts \
                i18n/asteroid-weather.it.ts \
                i18n/asteroid-weather.kab.ts \
                i18n/asteroid-weather.ko.ts \
-               i18n/asteroid-weather.nl.ts \
+               i18n/asteroid-weather.nl_NL.ts \
                i18n/asteroid-weather.pl.ts \
                i18n/asteroid-weather.pt_BR.ts \
                i18n/asteroid-weather.ru.ts \
