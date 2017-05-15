@@ -44,6 +44,6 @@ desktop.path = /usr/share/applications
 desktop.CONFIG = no_check_exist
 
 fonts.files = weathericons-regular-webfont.ttf
-fonts.path = /usr/lib/fonts/
+fonts.path = /usr/share/fonts/
 
 INSTALLS += target desktop fonts
