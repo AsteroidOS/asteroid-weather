@@ -28,7 +28,7 @@ Application {
 
     FontLoader {
         id: weatherFont
-        source: "file:///usr/lib/fonts/weathericons-regular-webfont.ttf"
+        source: "file:///usr/share/fonts/weathericons-regular-webfont.ttf"
     }
 
     ConfigurationValue {
