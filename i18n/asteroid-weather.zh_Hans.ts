@@ -6,7 +6,7 @@
     <message>
         <location filename="asteroid-weather.desktop.h" line="5"/>
         <source>Weather</source>
-        <translation>天氣</translation>
+        <translation>天气</translation>
     </message>
 </context>
 <context>
@@ -38,8 +38,8 @@
     <message>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation>&lt;h3&gt; 1无数据&lt;/h3&gt; 2
-和手机同步中.</translation>
+        <translation>&lt;h3&gt;无数据&lt;/h3&gt;
+请用您的手机进行同步。</translation>
     </message>
 </context>
 </TS>
