@@ -28,7 +28,7 @@ Application {
 
     FontLoader {
         id: weatherFont
-        source: "file:///usr/lib/fonts/weathericons-regular-webfont.ttf"
+        source: "file:///usr/share/fonts/weathericons-regular-webfont.ttf"
     }
 
     ConfigurationValue {
@@ -203,7 +203,7 @@ Application {
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.Wrap
         anchors.left: parent.left; anchors.right: parent.right
-        anchors.leftMargin: width*0.02; anchors.rightMargin: width*0.02
+        anchors.leftMargin: parent.width*0.02; anchors.rightMargin: parent.width*0.02
         anchors.verticalCenter: parent.verticalCenter
         anchors.verticalCenterOffset: parent.height*0.15
     }
