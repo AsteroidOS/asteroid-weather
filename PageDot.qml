@@ -19,6 +19,7 @@ import QtQuick 2.9
 
 Item {
     width: height*5/4*dotNumber
+    visible: dotNumber > 1
 
     property int currentIndex: 0
     property int dotNumber: 5
