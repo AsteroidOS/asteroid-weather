@@ -39,7 +39,7 @@
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
         <translation>&lt;h3&gt;Žádná data&lt;/h3&gt;
-Synchronizujte AsteroidOS se svým telefonem.</translation>
+Synchronizujte AsteroidOS s telefonem.</translation>
     </message>
 </context>
 </TS>
