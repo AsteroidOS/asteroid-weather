@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
+import QtQuick 2.9
 import org.asteroid.controls 1.0
 import org.nemomobile.configuration 1.0
 import 'qrc:/icons.js' as IconTools
@@ -46,8 +46,8 @@ Application {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        height: parent.height/3
-        font.pixelSize: height/6
+        height: Dims.h(33)
+        font.pixelSize: Dims.l(6)
     }
 
     ConfigurationValue {
@@ -107,8 +107,8 @@ Application {
                 anchors.top: parent.top
                 anchors.left: parent.left
                 anchors.right: parent.right
-                height: parent.height/3
-                font.pixelSize: height/6
+                height: Dims.h(33)
+                font.pixelSize: Dims.l(6)
             }
 
             Text {
@@ -119,8 +119,8 @@ Application {
                 anchors.bottom: parent.bottom
                 anchors.top: parent.top
                 anchors.left: parent.left
-                width: parent.width/3
-                font.pixelSize: width/5
+                width: Dims.w(33)
+                font.pixelSize: Dims.l(7)
             }
 
             Text {
@@ -129,7 +129,7 @@ Application {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "weathericons"
-                font.pixelSize: app.height/3
+                font.pixelSize: Dims.l(33)
                 anchors.centerIn: parent
             }
 
@@ -141,8 +141,8 @@ Application {
                 anchors.bottom: parent.bottom
                 anchors.top: parent.top
                 anchors.right: parent.right
-                width: parent.width/3
-                font.pixelSize: width/5
+                width: Dims.w(33)
+                font.pixelSize: Dims.l(6)
             }
         }
     }
@@ -166,10 +166,10 @@ Application {
     }
 
     PageDot {
-        height: parent.height/35
+        height: Dims.h(3)
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: parent.height/30
+        anchors.bottomMargin: Dims.h(3)
         currentIndex: lv.currentIndex
         dotNumber: availableDays(timestampDay0.value*1000)
     }
@@ -178,7 +178,7 @@ Application {
         id: noDataBackground
         visible: availableDays(timestampDay0.value*1000) <= 0
         anchors.centerIn: parent
-        anchors.verticalCenterOffset: -parent.height*0.13
+        anchors.verticalCenterOffset: -Dims.h(13)
         color: "black"
         radius: width/2
         opacity: 0.2
@@ -188,7 +188,7 @@ Application {
     Icon {
         visible: availableDays(timestampDay0.value*1000) <= 0
         anchors.fill: noDataBackground
-        anchors.margins: parent.height*0.03
+        anchors.margins: Dims.l(3)
         color: "white"
         name: "ios-sync"
     }
@@ -197,15 +197,15 @@ Application {
         id: noDataText
         visible: availableDays(timestampDay0.value*1000) <= 0
         text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
-        font.pixelSize: parent.height*0.05
+        font.pixelSize: Dims.l(5)
         color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.Wrap
         anchors.left: parent.left; anchors.right: parent.right
-        anchors.leftMargin: parent.width*0.02; anchors.rightMargin: parent.width*0.02
+        anchors.leftMargin: Dims.w(2); anchors.rightMargin: Dims.w(2)
         anchors.verticalCenter: parent.verticalCenter
-        anchors.verticalCenterOffset: parent.height*0.15
+        anchors.verticalCenterOffset: Dims.h(15)
     }
 }
 

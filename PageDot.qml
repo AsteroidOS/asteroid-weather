@@ -15,10 +15,11 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
+import QtQuick 2.9
 
 Item {
     width: height*5/4*dotNumber
+    visible: dotNumber > 1
 
     property int currentIndex: 0
     property int dotNumber: 5
