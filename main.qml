@@ -77,6 +77,20 @@ Application {
         }
     }
 
+    ConfigurationValue {
+        id: useFahrenheit
+        key: "/org/asteroidos/settings/use-fahrenheit"
+        defaultValue: false
+    }
+
+    function convertTemp(val) {
+        var celsius = (val-273);
+        if(!useFahrenheit.value)
+            return celsius + "°C";
+        else
+            return (((celsius)*9/5) + 32) + "°F";
+    }
+
     Component {
         id: dayDelegate
         Item {
@@ -112,7 +126,7 @@ Application {
             }
 
             Text {
-                text: "<h6>" + qsTr("Min:") + "</h6>\n" + (minTemp.value-273) + qsTr("°C")
+                text: "<h6>" + qsTr("Min:") + "</h6>\n" + convertTemp(minTemp.value)
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -134,7 +148,7 @@ Application {
             }
 
             Text {
-                text: "<h6>" + qsTr("Max:") + "</h6>\n" + (maxTemp.value-273) + qsTr("°C")
+                text: "<h6>" + qsTr("Max:") + "</h6>\n" + convertTemp(maxTemp.value)
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
