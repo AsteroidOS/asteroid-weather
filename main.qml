@@ -203,7 +203,6 @@ Application {
         visible: availableDays(timestampDay0.value*1000) <= 0
         anchors.fill: noDataBackground
         anchors.margins: Dims.l(3)
-        color: "white"
         name: "ios-sync"
     }
 
