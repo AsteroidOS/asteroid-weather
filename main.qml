@@ -37,10 +37,9 @@ Application {
         defaultValue: qsTr("Unknown")
     }
 
-    Text {
+    Label {
         visible: availableDays(timestampDay0.value*1000) > 0
         text: cityName.value
-        color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.bottom: parent.bottom
@@ -113,9 +112,8 @@ Application {
                 defaultValue: 0
             }
 
-            Text {
+            Label {
                 text: nameOfDay(index)
-                color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.top: parent.top
@@ -125,21 +123,18 @@ Application {
                 font.pixelSize: Dims.l(6)
             }
 
-            Text {
+            Label {
                 text: "<h6>" + qsTr("Min:") + "</h6>\n" + convertTemp(minTemp.value)
-                color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.bottom: parent.bottom
                 anchors.top: parent.top
                 anchors.left: parent.left
                 width: Dims.w(33)
-                font.pixelSize: Dims.l(7)
             }
 
-            Text {
+            Label {
                 text: IconTools.getIconCode(owmId.value, 0)
-                color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "weathericons"
@@ -147,9 +142,8 @@ Application {
                 anchors.centerIn: parent
             }
 
-            Text {
+            Label {
                 text: "<h6>" + qsTr("Max:") + "</h6>\n" + convertTemp(maxTemp.value)
-                color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.bottom: parent.bottom
@@ -206,12 +200,11 @@ Application {
         name: "ios-sync"
     }
 
-    Text {
+    Label {
         id: noDataText
         visible: availableDays(timestampDay0.value*1000) <= 0
         text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
         font.pixelSize: Dims.l(5)
-        color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.Wrap
