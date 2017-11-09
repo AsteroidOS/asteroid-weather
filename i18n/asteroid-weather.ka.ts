@@ -6,7 +6,7 @@
     <message>
         <location filename="asteroid-weather.desktop.h" line="5"/>
         <source>Weather</source>
-        <translation></translation>
+        <translation>ამინდი</translation>
     </message>
 </context>
 <context>
@@ -17,11 +17,11 @@
     </message>
     <message>
         <source>Today</source>
-        <translation></translation>
+        <translation>დღეს</translation>
     </message>
     <message>
         <source>Tomorrow</source>
-        <translation></translation>
+        <translation>ხვალ</translation>
     </message>
     <message>
         <source>Min:</source>
