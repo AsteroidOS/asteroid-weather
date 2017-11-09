@@ -81,11 +81,6 @@ Application {
         defaultValue: qsTr("Unknown")
     }
 
-    FontLoader {
-        id: weatherFont
-        source: "file:///usr/share/fonts/weathericons-regular-webfont.ttf"
-    }
-
     StatusPage {
         text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
         icon: "ios-sync"
@@ -150,13 +145,11 @@ Application {
                     width: Dims.w(33)
                 }
 
-                Label {
-                    text: IconTools.getIconCode(owmId.value, 0)
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    font.family: "weathericons"
-                    font.pixelSize: Dims.l(33)
+                Icon {
+                    name: IconTools.getIconName(owmId.value)
                     anchors.centerIn: parent
+                    width: Dims.w(33)
+                    height: width
                 }
 
                 Label {
