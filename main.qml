@@ -37,10 +37,9 @@ Application {
         defaultValue: qsTr("Unknown")
     }
 
-    Text {
+    Label {
         visible: availableDays(timestampDay0.value*1000) > 0
         text: cityName.value
-        color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.bottom: parent.bottom
@@ -77,6 +76,20 @@ Application {
         }
     }
 
+    ConfigurationValue {
+        id: useFahrenheit
+        key: "/org/asteroidos/settings/use-fahrenheit"
+        defaultValue: false
+    }
+
+    function convertTemp(val) {
+        var celsius = (val-273);
+        if(!useFahrenheit.value)
+            return celsius + "°C";
+        else
+            return (((celsius)*9/5) + 32) + "°F";
+    }
+
     Component {
         id: dayDelegate
         Item {
@@ -99,9 +112,8 @@ Application {
                 defaultValue: 0
             }
 
-            Text {
+            Label {
                 text: nameOfDay(index)
-                color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.top: parent.top
@@ -111,21 +123,18 @@ Application {
                 font.pixelSize: Dims.l(6)
             }
 
-            Text {
-                text: "<h6>" + qsTr("Min:") + "</h6>\n" + (minTemp.value-273) + qsTr("°C")
-                color: "white"
+            Label {
+                text: "<h6>" + qsTr("Min:") + "</h6>\n" + convertTemp(minTemp.value)
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.bottom: parent.bottom
                 anchors.top: parent.top
                 anchors.left: parent.left
                 width: Dims.w(33)
-                font.pixelSize: Dims.l(7)
             }
 
-            Text {
+            Label {
                 text: IconTools.getIconCode(owmId.value, 0)
-                color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "weathericons"
@@ -133,9 +142,8 @@ Application {
                 anchors.centerIn: parent
             }
 
-            Text {
-                text: "<h6>" + qsTr("Max:") + "</h6>\n" + (maxTemp.value-273) + qsTr("°C")
-                color: "white"
+            Label {
+                text: "<h6>" + qsTr("Max:") + "</h6>\n" + convertTemp(maxTemp.value)
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.bottom: parent.bottom
@@ -189,16 +197,14 @@ Application {
         visible: availableDays(timestampDay0.value*1000) <= 0
         anchors.fill: noDataBackground
         anchors.margins: Dims.l(3)
-        color: "white"
         name: "ios-sync"
     }
 
-    Text {
+    Label {
         id: noDataText
         visible: availableDays(timestampDay0.value*1000) <= 0
         text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
         font.pixelSize: Dims.l(5)
-        color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.Wrap
