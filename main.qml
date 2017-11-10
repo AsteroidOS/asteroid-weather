@@ -26,33 +26,12 @@ Application {
     centerColor: "#C91C1C"
     outerColor: "#4C0000"
 
-    FontLoader {
-        id: weatherFont
-        source: "file:///usr/share/fonts/weathericons-regular-webfont.ttf"
-    }
-
-    ConfigurationValue {
-        id: cityName
-        key: "/org/asteroidos/weather/city-name"
-        defaultValue: qsTr("Unknown")
-    }
-
-    Label {
-        visible: availableDays(timestampDay0.value*1000) > 0
-        text: cityName.value
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        height: Dims.h(33)
-        font.pixelSize: Dims.l(6)
-    }
-
-    ConfigurationValue {
-        id: timestampDay0
-        key: "/org/asteroidos/weather/timestamp-day0"
-        defaultValue: 0
+    function availableDays(day0) {
+        var currentDate = new Date();
+        var day0Date    = new Date(day0);
+        var daysDiff = Math.round((currentDate-day0Date)/(1000*60*60*24));
+        if(daysDiff > 5 || daysDiff < 0) daysDiff = 5;
+        return 5-daysDiff;
     }
 
     function dayNbFromIndex(i) {
@@ -76,12 +55,6 @@ Application {
         }
     }
 
-    ConfigurationValue {
-        id: useFahrenheit
-        key: "/org/asteroidos/settings/use-fahrenheit"
-        defaultValue: false
-    }
-
     function convertTemp(val) {
         var celsius = (val-273);
         if(!useFahrenheit.value)
@@ -90,128 +63,126 @@ Application {
             return (((celsius)*9/5) + 32) + "°F";
     }
 
-    Component {
-        id: dayDelegate
-        Item {
-            width: app.width; height: app.height
-            property int dayNb: dayNbFromIndex(index)
+    ConfigurationValue {
+        id: timestampDay0
+        key: "/org/asteroidos/weather/timestamp-day0"
+        defaultValue: 0
+    }
 
-            ConfigurationValue {
-                id: owmId
-                key: "/org/asteroidos/weather/day" + dayNb + "/id"
-                defaultValue: 0
-            }
-            ConfigurationValue {
-                id: minTemp
-                key: "/org/asteroidos/weather/day" + dayNb + "/min-temp"
-                defaultValue: 0
-            }
-            ConfigurationValue {
-                id: maxTemp
-                key: "/org/asteroidos/weather/day" + dayNb + "/max-temp"
-                defaultValue: 0
-            }
+    ConfigurationValue {
+        id: useFahrenheit
+        key: "/org/asteroidos/settings/use-fahrenheit"
+        defaultValue: false
+    }
 
-            Label {
-                text: nameOfDay(index)
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                anchors.top: parent.top
-                anchors.left: parent.left
-                anchors.right: parent.right
-                height: Dims.h(33)
-                font.pixelSize: Dims.l(6)
-            }
+    ConfigurationValue {
+        id: cityName
+        key: "/org/asteroidos/weather/city-name"
+        defaultValue: qsTr("Unknown")
+    }
 
-            Label {
-                text: "<h6>" + qsTr("Min:") + "</h6>\n" + convertTemp(minTemp.value)
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                anchors.bottom: parent.bottom
-                anchors.top: parent.top
-                anchors.left: parent.left
-                width: Dims.w(33)
-            }
+    StatusPage {
+        text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
+        icon: "ios-sync"
+        visible: availableDays(timestampDay0.value*1000) <= 0
+    }
+    Item {
+        anchors.fill: parent
 
-            Label {
-                text: IconTools.getIconCode(owmId.value, 0)
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                font.family: "weathericons"
-                font.pixelSize: Dims.l(33)
-                anchors.centerIn: parent
-            }
+        visible: availableDays(timestampDay0.value*1000) > 0
 
-            Label {
-                text: "<h6>" + qsTr("Max:") + "</h6>\n" + convertTemp(maxTemp.value)
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                anchors.bottom: parent.bottom
-                anchors.top: parent.top
-                anchors.right: parent.right
-                width: Dims.w(33)
-                font.pixelSize: Dims.l(6)
+        Label {
+            text: cityName.value
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: Dims.h(33)
+            font.pixelSize: Dims.l(6)
+        }
+
+        Component {
+            id: dayDelegate
+            Item {
+                width: app.width; height: app.height
+                property int dayNb: dayNbFromIndex(index)
+
+                ConfigurationValue {
+                    id: owmId
+                    key: "/org/asteroidos/weather/day" + dayNb + "/id"
+                    defaultValue: 0
+                }
+                ConfigurationValue {
+                    id: minTemp
+                    key: "/org/asteroidos/weather/day" + dayNb + "/min-temp"
+                    defaultValue: 0
+                }
+                ConfigurationValue {
+                    id: maxTemp
+                    key: "/org/asteroidos/weather/day" + dayNb + "/max-temp"
+                    defaultValue: 0
+                }
+
+                Label {
+                    text: nameOfDay(index)
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    height: Dims.h(33)
+                    font.pixelSize: Dims.l(6)
+                }
+
+                Label {
+                    text: "<h6>" + qsTr("Min:") + "</h6>\n" + convertTemp(minTemp.value)
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.bottom: parent.bottom
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    width: Dims.w(33)
+                }
+
+                Icon {
+                    name: IconTools.getIconName(owmId.value)
+                    anchors.centerIn: parent
+                    width: Dims.w(33)
+                    height: width
+                }
+
+                Label {
+                    text: "<h6>" + qsTr("Max:") + "</h6>\n" + convertTemp(maxTemp.value)
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.bottom: parent.bottom
+                    anchors.top: parent.top
+                    anchors.right: parent.right
+                    width: Dims.w(33)
+                    font.pixelSize: Dims.l(6)
+                }
             }
         }
-    }
 
-    function availableDays(day0) {
-        var currentDate = new Date();
-        var day0Date    = new Date(day0);
-        var daysDiff = Math.round((currentDate-day0Date)/(1000*60*60*24));
-        if(daysDiff > 5 || daysDiff < 0) daysDiff = 5;
-        return 5-daysDiff;
-    }
+        ListView {
+            id: lv
+            anchors.fill:parent
+            model: availableDays(timestampDay0.value*1000)
+            delegate: dayDelegate
+            orientation: ListView.Horizontal
+            snapMode: ListView.SnapOneItem
+            highlightRangeMode: ListView.StrictlyEnforceRange
+        }
 
-    ListView {
-        id: lv
-        anchors.fill:parent
-        model: availableDays(timestampDay0.value*1000)
-        delegate: dayDelegate
-        orientation: ListView.Horizontal
-        snapMode: ListView.SnapOneItem
-        highlightRangeMode: ListView.StrictlyEnforceRange
-    }
-
-    PageDot {
-        height: Dims.h(3)
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: Dims.h(3)
-        currentIndex: lv.currentIndex
-        dotNumber: availableDays(timestampDay0.value*1000)
-    }
-
-    Rectangle {
-        id: noDataBackground
-        visible: availableDays(timestampDay0.value*1000) <= 0
-        anchors.centerIn: parent
-        anchors.verticalCenterOffset: -Dims.h(13)
-        color: "black"
-        radius: width/2
-        opacity: 0.2
-        width: parent.height*0.25
-        height: width
-    }
-    Icon {
-        visible: availableDays(timestampDay0.value*1000) <= 0
-        anchors.fill: noDataBackground
-        anchors.margins: Dims.l(3)
-        name: "ios-sync"
-    }
-
-    Label {
-        id: noDataText
-        visible: availableDays(timestampDay0.value*1000) <= 0
-        text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
-        font.pixelSize: Dims.l(5)
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        wrapMode: Text.Wrap
-        anchors.left: parent.left; anchors.right: parent.right
-        anchors.leftMargin: Dims.w(2); anchors.rightMargin: Dims.w(2)
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.verticalCenterOffset: Dims.h(15)
+        PageDot {
+            height: Dims.h(3)
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: Dims.h(3)
+            currentIndex: lv.currentIndex
+            dotNumber: availableDays(timestampDay0.value*1000)
+        }
     }
 }
 
