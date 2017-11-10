@@ -133,6 +133,7 @@ Application {
                     anchors.right: parent.right
                     height: Dims.h(33)
                     font.pixelSize: Dims.l(6)
+                    font.bold: true
                 }
 
                 Label {
