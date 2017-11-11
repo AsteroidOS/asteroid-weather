@@ -13,7 +13,7 @@
     <name>main</name>
     <message>
         <source>Unknown</source>
-        <translation></translation>
+        <translation>უცნობი</translation>
     </message>
     <message>
         <source>Today</source>
@@ -25,20 +25,21 @@
     </message>
     <message>
         <source>Min:</source>
-        <translation></translation>
+        <translation>მინ:</translation>
     </message>
     <message>
         <source>°C</source>
-        <translation></translation>
+        <translation>°</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation></translation>
+        <translation>მაქს:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;No data&lt;/h3&gt;
 Sync AsteroidOS with your phone.</source>
-        <translation></translation>
+        <translation>&lt;h3&gt;მონაცემები არ არის&lt;/h3&gt;
+სინქრონიზაცია AsteroidOS თქვენი ტელეფონით.</translation>
     </message>
 </context>
 </TS>
