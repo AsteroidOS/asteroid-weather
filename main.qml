@@ -60,7 +60,7 @@ Application {
         if(!useFahrenheit.value)
             return celsius + "°C";
         else
-            return (((celsius)*9/5) + 32) + "°F";
+            return Math.round((((celsius)*9/5) + 32) * 10) / 10 + "°F";
     }
 
     ConfigurationValue {
@@ -133,6 +133,7 @@ Application {
                     anchors.right: parent.right
                     height: Dims.h(33)
                     font.pixelSize: Dims.l(6)
+                    font.bold: true
                 }
 
                 Label {
