@@ -60,7 +60,7 @@ Application {
         if(!useFahrenheit.value)
             return celsius + "°C";
         else
-            return Math.round((((celsius)*9/5) + 32) * 10) / 10 + "°F";
+            return Math.round(((celsius)*9/5) + 32) + "°F";
     }
 
     ConfigurationValue {
