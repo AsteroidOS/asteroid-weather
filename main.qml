@@ -45,10 +45,12 @@ Application {
     function nameOfDay(i) {
         switch(i) {
             case 0:
-                return qsTr("Today");
+                //% "Today"
+                return qsTrId("id-today");
                 break;
             case 1:
-                return qsTr("Tomorrow");
+                //% "Tomorrow"
+                return qsTrId("id-tomorrow");
                 break;
             default:
                 return Qt.formatDate(new Date(new Date().getTime() + i * 1000*60*60*24), "dddd");
@@ -78,11 +80,13 @@ Application {
     ConfigurationValue {
         id: cityName
         key: "/org/asteroidos/weather/city-name"
-        defaultValue: qsTr("Unknown")
+        //% "Unknown"
+        defaultValue: qsTrId("id-unknown")
     }
 
     StatusPage {
-        text: qsTr("<h3>No data</h3>\nSync AsteroidOS with your phone.")
+        //% "<h3>No data</h3>Sync AsteroidOS with your phone."
+        text: qsTrId("id-no-data-sync")
         icon: "ios-sync"
         visible: availableDays(timestampDay0.value*1000) <= 0
     }
@@ -137,7 +141,8 @@ Application {
                 }
 
                 Label {
-                    text: "<h6>" + qsTr("Min:") + "</h6>\n" + convertTemp(minTemp.value)
+                    //% "Min:"
+                    text: "<h6>" + qsTrId("id-min") + "</h6>\n" + convertTemp(minTemp.value)
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     anchors.bottom: parent.bottom
@@ -154,7 +159,8 @@ Application {
                 }
 
                 Label {
-                    text: "<h6>" + qsTr("Max:") + "</h6>\n" + convertTemp(maxTemp.value)
+                    //% "Max:"
+                    text: "<h6>" + qsTrId("id-max") + "</h6>\n" + convertTemp(maxTemp.value)
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     anchors.bottom: parent.bottom
