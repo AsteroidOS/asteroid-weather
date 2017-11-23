@@ -6,77 +6,37 @@
     <message id="id-today">
         <location filename="../main.qml" line="49"/>
         <source>Today</source>
-        <translation type="unfinished">Oggi</translation>
+        <translation>Oggi</translation>
     </message>
     <message id="id-tomorrow">
         <location filename="../main.qml" line="53"/>
         <source>Tomorrow</source>
-        <translation type="unfinished">Domani</translation>
+        <translation>Domani</translation>
     </message>
     <message id="id-unknown">
         <location filename="../main.qml" line="84"/>
         <source>Unknown</source>
-        <translation type="unfinished">Sconosciuto</translation>
+        <translation>Sconosciuto</translation>
     </message>
     <message id="id-no-data-sync">
         <location filename="../main.qml" line="89"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;Sync AsteroidOS with your phone.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Nessun dato&lt;/h3&gt;Sincronizza AsteroidOS con il telefono.</translation>
     </message>
     <message id="id-min">
         <location filename="../main.qml" line="145"/>
         <source>Min:</source>
-        <translation type="unfinished">Min:</translation>
+        <translation>Min:</translation>
     </message>
     <message id="id-max">
         <location filename="../main.qml" line="163"/>
         <source>Max:</source>
-        <translation type="unfinished">Max:</translation>
+        <translation>Max:</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation type="unfinished">Meteo</translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <source>Weather</source>
-        <translation type="vanished">Meteo</translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <source>Unknown</source>
-        <translation type="vanished">Sconosciuto</translation>
-    </message>
-    <message>
-        <source>Today</source>
-        <translation type="vanished">Oggi</translation>
-    </message>
-    <message>
-        <source>Tomorrow</source>
-        <translation type="vanished">Domani</translation>
-    </message>
-    <message>
-        <source>Min:</source>
-        <translation type="vanished">Min:</translation>
-    </message>
-    <message>
-        <source>°C</source>
-        <translation type="vanished">°C</translation>
-    </message>
-    <message>
-        <source>Max:</source>
-        <translation type="vanished">Max:</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;No data&lt;/h3&gt;
-Sync AsteroidOS with your phone.</source>
-        <translation type="vanished">&lt;h3&gt;Nessun dato&lt;/h3&gt;
-Sincronizza AsteroidOS con il telefono.</translation>
+        <translation>Meteo</translation>
     </message>
 </context>
 </TS>
