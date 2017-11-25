@@ -6,37 +6,37 @@
     <message id="id-today">
         <location filename="../main.qml" line="49"/>
         <source>Today</source>
-        <translation></translation>
+        <translation>היום</translation>
     </message>
     <message id="id-tomorrow">
         <location filename="../main.qml" line="53"/>
         <source>Tomorrow</source>
-        <translation></translation>
+        <translation>מחר</translation>
     </message>
     <message id="id-unknown">
         <location filename="../main.qml" line="84"/>
         <source>Unknown</source>
-        <translation></translation>
+        <translation>לא ידוע</translation>
     </message>
     <message id="id-no-data-sync">
         <location filename="../main.qml" line="89"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;Sync AsteroidOS with your phone.</source>
-        <translation></translation>
+        <translation>&lt;h3&gt;אין נתונים&lt;/h3&gt;יש לסנכרן את AsteroidOS עם הטלפון שלך.</translation>
     </message>
     <message id="id-min">
         <location filename="../main.qml" line="145"/>
         <source>Min:</source>
-        <translation></translation>
+        <translation>מזערי:</translation>
     </message>
     <message id="id-max">
         <location filename="../main.qml" line="163"/>
         <source>Max:</source>
-        <translation></translation>
+        <translation>מרבי:</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation></translation>
+        <translation>מזג אוויר</translation>
     </message>
 </context>
 </TS>
