@@ -36,7 +36,7 @@
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>Καιρός</translation>
     </message>
 </context>
 </TS>
