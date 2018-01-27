@@ -6,7 +6,7 @@
     <message id="id-today">
         <location filename="../main.qml" line="49"/>
         <source>Today</source>
-        <translation>今天</translation>
+        <translation>今日</translation>
     </message>
     <message id="id-tomorrow">
         <location filename="../main.qml" line="53"/>
