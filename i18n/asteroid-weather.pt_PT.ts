@@ -26,12 +26,12 @@
     <message id="id-min">
         <location filename="../main.qml" line="145"/>
         <source>Min:</source>
-        <translation>Mín:</translation>
+        <translation>Min:</translation>
     </message>
     <message id="id-max">
         <location filename="../main.qml" line="163"/>
         <source>Max:</source>
-        <translation>Máx:</translation>
+        <translation>Max:</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
