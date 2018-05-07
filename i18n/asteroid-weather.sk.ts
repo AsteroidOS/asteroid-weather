@@ -21,7 +21,7 @@
     <message id="id-no-data-sync">
         <location filename="../main.qml" line="89"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;Sync AsteroidOS with your phone.</source>
-        <translation>&lt;h3&gt;Údaje nedostupné&lt;/h3&gt;Synchronizujte AsteroidOS s telefónom.</translation>
+        <translation>&lt;h3&gt;Žiadne data&lt;/h3&gt;Synchronizujte AsteroidOS s telefónom.</translation>
     </message>
     <message id="id-min">
         <location filename="../main.qml" line="145"/>
