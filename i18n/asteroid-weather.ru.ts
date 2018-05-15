@@ -36,7 +36,7 @@
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation>погода</translation>
+        <translation>Погода</translation>
     </message>
 </context>
 </TS>
