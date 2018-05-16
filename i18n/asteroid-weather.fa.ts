@@ -26,17 +26,17 @@
     <message id="id-min">
         <location filename="../main.qml" line="145"/>
         <source>Min:</source>
-        <translation>کمینه:</translation>
+        <translation>حداقل:</translation>
     </message>
     <message id="id-max">
         <location filename="../main.qml" line="163"/>
         <source>Max:</source>
-        <translation>بیشینه:</translation>
+        <translation>حداکثر:</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation>ﻮﻀﻋ ﻩﻭﺍ</translation>
+        <translation>آب و هوا</translation>
     </message>
 </context>
 </TS>
