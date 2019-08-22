@@ -37,7 +37,7 @@ AsteroidOS ஐ உங்கள் சாதனத்துடன் ஒத்த
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>வானிலை</translation>
     </message>
 </context>
 </TS>
