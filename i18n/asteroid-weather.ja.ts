@@ -4,32 +4,32 @@
 <context>
     <name></name>
     <message id="id-today">
-        <location filename="../main.qml" line="49"/>
+        <location filename="../src/main.qml" line="49"/>
         <source>Today</source>
         <translation>今日</translation>
     </message>
     <message id="id-tomorrow">
-        <location filename="../main.qml" line="53"/>
+        <location filename="../src/main.qml" line="53"/>
         <source>Tomorrow</source>
         <translation>明日</translation>
     </message>
     <message id="id-unknown">
-        <location filename="../main.qml" line="84"/>
+        <location filename="../src/main.qml" line="84"/>
         <source>Unknown</source>
         <translation>不明</translation>
     </message>
     <message id="id-no-data-sync">
-        <location filename="../main.qml" line="89"/>
+        <location filename="../src/main.qml" line="89"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;Sync AsteroidOS with your phone.</source>
         <translation>&lt;h3&gt;データなし&lt;/h3&gt;AsteroidOSを端末と同期してください。</translation>
     </message>
     <message id="id-min">
-        <location filename="../main.qml" line="145"/>
+        <location filename="../src/main.qml" line="145"/>
         <source>Min:</source>
         <translation>最低:</translation>
     </message>
     <message id="id-max">
-        <location filename="../main.qml" line="163"/>
+        <location filename="../src/main.qml" line="163"/>
         <source>Max:</source>
         <translation>最大:</translation>
     </message>
