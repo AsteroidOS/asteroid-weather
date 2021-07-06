@@ -6,17 +6,17 @@
     <message id="id-today">
         <location filename="../src/main.qml" line="49"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Šiandien</translation>
     </message>
     <message id="id-tomorrow">
         <location filename="../src/main.qml" line="53"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Rytoj</translation>
     </message>
     <message id="id-unknown">
         <location filename="../src/main.qml" line="84"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Nežinoma</translation>
     </message>
     <message id="id-no-data-sync">
         <location filename="../src/main.qml" line="89"/>
