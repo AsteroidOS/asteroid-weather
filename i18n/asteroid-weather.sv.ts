@@ -6,17 +6,17 @@
     <message id="id-today">
         <location filename="../main.qml" line="49"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Idag</translation>
     </message>
     <message id="id-tomorrow">
         <location filename="../main.qml" line="53"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Imorgon</translation>
     </message>
     <message id="id-unknown">
         <location filename="../main.qml" line="84"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Okänd</translation>
     </message>
     <message id="id-no-data-sync">
         <location filename="../main.qml" line="89"/>
@@ -26,17 +26,17 @@
     <message id="id-min">
         <location filename="../main.qml" line="145"/>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message id="id-max">
         <location filename="../main.qml" line="163"/>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max:</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>Väder</translation>
     </message>
 </context>
 </TS>
