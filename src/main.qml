@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2016 - Florent Revest <revestflo@gmail.com>
+ * Copyright (C) 2021 - Timo Könnecke <github.com/eLtMosen>
+ *               2016 - Florent Revest <revestflo@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +31,7 @@ Application {
         var currentDate = new Date();
         var day0Date    = new Date(day0);
         var daysDiff = Math.round((currentDate-day0Date)/(1000*60*60*24));
-        if(daysDiff > 5 || daysDiff < 0) daysDiff = 5;
+        if(daysDiff > 5 || daysDiff < 0) daysDiff = 5;
         return 5-daysDiff;
     }
 
@@ -57,8 +58,16 @@ Application {
         }
     }
 
-    function convertTemp(val) {
-        var celsius = (val-273);
+    function kelvinToTemperatureNumber(kelvin) {
+        var celsius = (kelvin-273);
+        if(!useFahrenheit.value)
+            return celsius;
+        else
+            return Math.round(((celsius)*9/5) + 32);
+    }
+
+    function kelvinToTemperatureString(kelvin) {
+        var celsius = (kelvin-273);
         if(!useFahrenheit.value)
             return celsius + "°C";
         else
@@ -67,18 +76,21 @@ Application {
 
     ConfigurationValue {
         id: timestampDay0
+
         key: "/org/asteroidos/weather/timestamp-day0"
         defaultValue: 0
     }
 
     ConfigurationValue {
         id: useFahrenheit
+
         key: "/org/asteroidos/settings/use-fahrenheit"
         defaultValue: false
     }
 
     ConfigurationValue {
         id: cityName
+
         key: "/org/asteroidos/weather/city-name"
         //% "Unknown"
         defaultValue: qsTrId("id-unknown")
@@ -90,24 +102,38 @@ Application {
         icon: "ios-sync"
         visible: availableDays(timestampDay0.value*1000) <= 0
     }
+
     Item {
+        visible: availableDays(timestampDay0.value*1000) > 0
         anchors.fill: parent
 
-        visible: availableDays(timestampDay0.value*1000) > 0
-
         Label {
-            text: cityName.value
+            id: cityNameDisplay
+
+            property string cityCount: cityName.value
+
+            height: Dims.h(44)
+            width: Dims.l(62)
+            anchors {
+                bottom: parent.bottom
+                horizontalCenter: parent.horizontalCenter
+            }
+            renderType: Text.NativeRendering
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: Dims.h(33)
-            font.pixelSize: Dims.l(6)
+            wrapMode: Text.WordWrap
+            lineHeight: Dims.l(0.2)
+            font {
+                styleName: "SemiCondensed ExtraLight"
+                letterSpacing: -Dims.l(0.05)
+                pixelSize: cityCount.length > 16 ? Dims.l(8.4) : cityCount.length > 14 ? Dims.l(9) : Dims.l(10)
+            }
+            text: cityName.value
         }
 
         Component {
             id: dayDelegate
+
             Item {
                 width: app.width; height: app.height
                 property int dayNb: dayNbFromIndex(index)
@@ -129,53 +155,249 @@ Application {
                 }
 
                 Label {
+                    height: Dims.h(42)
+                    anchors {
+                        top: parent.top
+                        left: parent.left
+                        right: parent.right
+                    }
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font {
+                        pixelSize: Dims.l(10)
+                        styleName: "SemiCondensed ExtraLight"
+                    }
                     text: nameOfDay(index)
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    height: Dims.h(33)
-                    font.pixelSize: Dims.l(6)
-                    font.bold: true
                 }
 
-                Label {
-                    //% "Min:"
-                    text: "<h6>" + qsTrId("id-min") + "</h6>\n" + convertTemp(minTemp.value)
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    anchors.bottom: parent.bottom
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    width: Dims.w(33)
-                }
+                Rectangle {
+                    id: minMaxCircle
 
-                Icon {
-                    name: IconTools.getIconName(owmId.value)
-                    anchors.centerIn: parent
-                    width: Dims.w(33)
+                    width: Dims.w(26)
                     height: width
+                    radius: width/2
+                    color: "#00ffffff"
+                    anchors {
+                        centerIn: parent
+                        horizontalCenterOffset: Dims.w(32)
+                    }
+
+                    Label {
+                        id: minDisplay
+
+                        width: Dims.w(40)
+                        height: width
+                        opacity: 1
+                        anchors.centerIn: parent
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font {
+                            styleName: "ExtraCondensed ExtraLight"
+                            pixelSize: Dims.w(12)
+                        }
+                        text: kelvinToTemperatureString(minTemp.value)
+
+                        Label {
+                            id: minLabel
+
+                            color: "#99ffffff"
+                            anchors {
+                                centerIn: minDisplay
+                                verticalCenterOffset: -Dims.h(8.4)
+                            }
+                            font {
+                                styleName: "Bold"
+                                pixelSize: Dims.w(5)
+                            }
+                            //% "Min:"
+                            text: qsTrId("id-min")                        }
+
+                        Label {
+                            id: minArrow
+
+                            color: "#88ffffff"
+                            anchors {
+                                centerIn: minDisplay
+                                verticalCenterOffset: Dims.h(8.2)
+                            }
+                            font {
+                                styleName: "Light"
+                                pixelSize: Dims.w(6)
+                            }
+                            text: "\u25bc"
+                        }
+                    }
+
+                    Label {
+                        id: maxDisplay
+
+                        width: Dims.w(40)
+                        height: width
+                        opacity: 0
+                        anchors.centerIn: parent
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font {
+                            styleName: "ExtraCondensed ExtraLight"
+                            pixelSize: Dims.w(12)
+                        }
+                        text: kelvinToTemperatureString(maxTemp.value)
+
+                        Label {
+                            id: maxLabel
+
+                            color: "#99ffffff"
+                            anchors {
+                                centerIn: maxDisplay
+                                verticalCenterOffset: Dims.h(8)
+                            }
+                            font {
+                                styleName: "Bold"
+                                pixelSize: Dims.w(5)
+                            }
+                            //% "Max:"
+                            text: qsTrId("id-max")
+                        }
+
+                        Label {
+                            id: maxArrow
+
+                            color: "#88ffffff"
+                            anchors {
+                                centerIn: maxDisplay
+                                verticalCenterOffset: -Dims.h(9.8)
+                            }
+                            font {
+                                styleName: "Light"
+                                pixelSize: Dims.h(6)
+                            }
+                            text: "\u25b2"
+                        }
+                    }
+                }
+
+                Rectangle {
+                    id: iconCircle
+
+                    width: Dims.w(24)
+                    height: width
+                    radius: width/2
+                    color: "#00ffffff"
+                    anchors {
+                        centerIn: parent
+                        horizontalCenterOffset: -Dims.w(30)
+                    }
+
+                    Icon {
+                        id: iconDisplay
+
+                        name: IconTools.getIconName(owmId.value)
+                        width: Dims.w(24)
+                        height: width
+                        opacity: 1
+                        anchors.centerIn: parent
+                    }
                 }
 
                 Label {
-                    //% "Max:"
-                    text: "<h6>" + qsTrId("id-max") + "</h6>\n" + convertTemp(maxTemp.value)
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    anchors.bottom: parent.bottom
-                    anchors.top: parent.top
-                    anchors.right: parent.right
-                    width: Dims.w(33)
-                    font.pixelSize: Dims.l(6)
+                    id: tempBig
+
+                    property string tempLength: kelvinToTemperatureNumber(Math.round((maxTemp.value + minTemp.value) / 2))
+                    property string tempSliceMinus: tempLength.slice(0, 1) === "-" ? tempLength.slice(1, 4) : tempLength
+
+                    clip: false
+                    renderType: Text.NativeRendering
+                    anchors {
+                        centerIn: parent
+                        verticalCenterOffset: -Dims.h(0.5)
+                    }
+                    font {
+                        letterSpacing: -Dims.l(1)
+                        styleName: "ExtraCondensed Thin"
+                        pixelSize: Dims.w(34)
+                    }
+                    text: tempSliceMinus
+
+                    Label {
+                        renderType: Text.NativeRendering
+                        anchors {
+                            left: tempBig.right
+                            leftMargin: Dims.w(0.4)
+                            top: tempBig.top
+                            topMargin: Dims.h(7.0)
+                        }
+                        font {
+                            styleName: "Light"
+                            pixelSize: Dims.w(15)
+                        }
+                        text: "°"
+                    }
+
+                    Label {
+                        visible: tempBig.tempLength.slice(0, 1) === "-"
+                        renderType: Text.NativeRendering
+                        anchors {
+                            right: tempBig.left
+                            rightMargin: Dims.w(0.2)
+                            verticalCenter: parent.verticalCenter
+                            verticalCenterOffset: Dims.h(3.5)
+                        }
+                        font {
+                            styleName: "Light"
+                            pixelSize: Dims.w(14)
+                        }
+                        text: "\u002D"
+                    }
+                }
+
+                SequentialAnimation {
+                    running: true
+                    loops: Animation.Infinite
+
+                    NumberAnimation {
+                        target: minDisplay
+                        property: "opacity"
+                        to: 0
+                        duration: 500
+                        easing.type: Easing.InOutQuad
+                    }
+
+                    NumberAnimation {
+                        target: maxDisplay
+                        property: "opacity"
+                        to: 1
+                        duration: 500
+                        easing.type: Easing.InOutQuad
+                    }
+
+                    PauseAnimation { duration: 2000 }
+
+                    NumberAnimation {
+                        target: maxDisplay
+                        property: "opacity"
+                        to: 0
+                        duration: 500
+                        easing.type: Easing.InOutQuad
+                    }
+
+                    NumberAnimation {
+                        target: minDisplay
+                        property: "opacity"
+                        to: 1
+                        duration: 500
+                        easing.type: Easing.InOutQuad
+                    }
+
+                    PauseAnimation { duration: 2000 }
                 }
             }
         }
 
         ListView {
             id: lv
+
             anchors.fill:parent
-            model: availableDays(timestampDay0.value*1000)
+            model: availableDays(timestampDay0.value * 1000)
             delegate: dayDelegate
             orientation: ListView.Horizontal
             snapMode: ListView.SnapOneItem
@@ -184,12 +406,13 @@ Application {
 
         PageDot {
             height: Dims.h(3)
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: Dims.h(3)
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                bottomMargin: Dims.h(3.8)
+            }
             currentIndex: lv.currentIndex
             dotNumber: availableDays(timestampDay0.value*1000)
         }
     }
 }
-
