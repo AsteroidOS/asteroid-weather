@@ -24,8 +24,8 @@ import 'qrc:/icons.js' as IconTools
 Application {
     id: app
 
-    centerColor: "#C91C1C"
-    outerColor: "#4C0000"
+    centerColor: "#990019"
+    outerColor: "#0C0200"
 
     function availableDays(day0) {
         var currentDate = new Date();

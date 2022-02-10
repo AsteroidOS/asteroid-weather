@@ -3,5 +3,5 @@ Type=Application
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-weather
 Icon=ios-cloudy-outline
-X-Asteroid-Center-Color=#C91C1C
-X-Asteroid-Outer-Color=#4C0000
+X-Asteroid-Center-Color=#990019
+X-Asteroid-Outer-Color=#0C0200
