@@ -171,29 +171,28 @@ Application {
                 }
 
                 Rectangle {
-                    id: minMaxCircle
+                    id: minCircle
 
-                    width: Dims.w(26)
+                    width: Dims.w(30)
                     height: width
                     radius: width/2
                     color: "#00ffffff"
                     anchors {
                         centerIn: parent
-                        horizontalCenterOffset: Dims.w(32)
+                        horizontalCenterOffset: Dims.w(-30)
                     }
 
                     Label {
                         id: minDisplay
 
-                        width: Dims.w(40)
+                        width: parent.width
                         height: width
-                        opacity: 1
                         anchors.centerIn: parent
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         font {
                             styleName: "ExtraCondensed ExtraLight"
-                            pixelSize: Dims.w(12)
+                            pixelSize: width/2
                         }
                         text: kelvinToTemperatureString(minTemp.value)
 
@@ -203,14 +202,15 @@ Application {
                             color: "#99ffffff"
                             anchors {
                                 centerIn: minDisplay
-                                verticalCenterOffset: -Dims.h(8.4)
+                                verticalCenterOffset: -parent.height/3
                             }
                             font {
                                 styleName: "Bold"
                                 pixelSize: Dims.w(5)
                             }
                             //% "Min:"
-                            text: qsTrId("id-min")                        }
+                            text: qsTrId("id-min")
+                        }
 
                         Label {
                             id: minArrow
@@ -218,7 +218,7 @@ Application {
                             color: "#88ffffff"
                             anchors {
                                 centerIn: minDisplay
-                                verticalCenterOffset: Dims.h(8.2)
+                                verticalCenterOffset: parent.height/3
                             }
                             font {
                                 styleName: "Light"
@@ -227,19 +227,31 @@ Application {
                             text: "\u25bc"
                         }
                     }
+                }
+
+                Rectangle {
+                    id: maxCircle
+
+                    width: Dims.w(30)
+                    height: width
+                    radius: width/2
+                    color: "#00ffffff"
+                    anchors {
+                        centerIn: parent
+                        horizontalCenterOffset: Dims.w(+30)
+                    }
 
                     Label {
                         id: maxDisplay
 
-                        width: Dims.w(40)
+                        width: parent.width
                         height: width
-                        opacity: 0
                         anchors.centerIn: parent
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         font {
                             styleName: "ExtraCondensed ExtraLight"
-                            pixelSize: Dims.w(12)
+                            pixelSize: width/2
                         }
                         text: kelvinToTemperatureString(maxTemp.value)
 
@@ -249,7 +261,7 @@ Application {
                             color: "#99ffffff"
                             anchors {
                                 centerIn: maxDisplay
-                                verticalCenterOffset: Dims.h(8)
+                                verticalCenterOffset: parent.height/3
                             }
                             font {
                                 styleName: "Bold"
@@ -265,7 +277,7 @@ Application {
                             color: "#88ffffff"
                             anchors {
                                 centerIn: maxDisplay
-                                verticalCenterOffset: -Dims.h(9.8)
+                                verticalCenterOffset: -parent.height/3
                             }
                             font {
                                 styleName: "Light"
@@ -285,7 +297,6 @@ Application {
                     color: "#00ffffff"
                     anchors {
                         centerIn: parent
-                        horizontalCenterOffset: -Dims.w(30)
                     }
 
                     Icon {
@@ -297,98 +308,6 @@ Application {
                         opacity: 1
                         anchors.centerIn: parent
                     }
-                }
-
-                Label {
-                    id: tempBig
-
-                    property string tempLength: kelvinToTemperatureNumber(Math.round((maxTemp.value + minTemp.value) / 2))
-                    property string tempSliceMinus: tempLength.slice(0, 1) === "-" ? tempLength.slice(1, 4) : tempLength
-
-                    clip: false
-                    renderType: Text.NativeRendering
-                    anchors {
-                        centerIn: parent
-                        verticalCenterOffset: -Dims.h(0.5)
-                    }
-                    font {
-                        letterSpacing: -Dims.l(1)
-                        styleName: "ExtraCondensed Thin"
-                        pixelSize: Dims.w(34)
-                    }
-                    text: tempSliceMinus
-
-                    Label {
-                        renderType: Text.NativeRendering
-                        anchors {
-                            left: tempBig.right
-                            leftMargin: Dims.w(0.4)
-                            top: tempBig.top
-                            topMargin: Dims.h(7.0)
-                        }
-                        font {
-                            styleName: "Light"
-                            pixelSize: Dims.w(15)
-                        }
-                        text: "°"
-                    }
-
-                    Label {
-                        visible: tempBig.tempLength.slice(0, 1) === "-"
-                        renderType: Text.NativeRendering
-                        anchors {
-                            right: tempBig.left
-                            rightMargin: Dims.w(0.2)
-                            verticalCenter: parent.verticalCenter
-                            verticalCenterOffset: Dims.h(3.5)
-                        }
-                        font {
-                            styleName: "Light"
-                            pixelSize: Dims.w(14)
-                        }
-                        text: "\u002D"
-                    }
-                }
-
-                SequentialAnimation {
-                    running: true
-                    loops: Animation.Infinite
-
-                    NumberAnimation {
-                        target: minDisplay
-                        property: "opacity"
-                        to: 0
-                        duration: 500
-                        easing.type: Easing.InOutQuad
-                    }
-
-                    NumberAnimation {
-                        target: maxDisplay
-                        property: "opacity"
-                        to: 1
-                        duration: 500
-                        easing.type: Easing.InOutQuad
-                    }
-
-                    PauseAnimation { duration: 2000 }
-
-                    NumberAnimation {
-                        target: maxDisplay
-                        property: "opacity"
-                        to: 0
-                        duration: 500
-                        easing.type: Easing.InOutQuad
-                    }
-
-                    NumberAnimation {
-                        target: minDisplay
-                        property: "opacity"
-                        to: 1
-                        duration: 500
-                        easing.type: Easing.InOutQuad
-                    }
-
-                    PauseAnimation { duration: 2000 }
                 }
             }
         }
