@@ -6,37 +6,37 @@
     <message id="id-today">
         <location filename="../src/main.qml" line="49"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>आज</translation>
     </message>
     <message id="id-tomorrow">
         <location filename="../src/main.qml" line="53"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>कल</translation>
     </message>
     <message id="id-unknown">
         <location filename="../src/main.qml" line="84"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>अनजान</translation>
     </message>
     <message id="id-no-data-sync">
         <location filename="../src/main.qml" line="89"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;Sync AsteroidOS with your phone.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;कोई डाटा उपलब्ध नहीं है&lt;/h3&gt;पने फ़ोन के साथ एस्टेरोइड ओ. एस. सिंक करें।</translation>
     </message>
     <message id="id-min">
         <location filename="../src/main.qml" line="145"/>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>न्यूनतम:</translation>
     </message>
     <message id="id-max">
         <location filename="../src/main.qml" line="163"/>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>अधिकतम:</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>मौसम</translation>
     </message>
 </context>
 </TS>
