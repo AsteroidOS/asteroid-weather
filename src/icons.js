@@ -11,15 +11,15 @@ var iconNameByOwmCode = {
     '231': 'ios-thunderstorm-outline',
     '232': 'ios-thunderstorm-outline',
     
-    '300': 'ios-rainy-outline',
-    '301': 'ios-rainy-outline',
-    '302': 'ios-rainy-outline',
-    '310': 'ios-rainy-outline',
-    '311': 'ios-rainy-outline',
-    '312': 'ios-rainy-outline',
-    '313': 'ios-rainy-outline',
-    '314': 'ios-rainy-outline',
-    '321': 'ios-rainy-outline',
+    '300': 'ios-drizzle-outline',
+    '301': 'ios-drizzle-outline',
+    '302': 'ios-drizzle-outline',
+    '310': 'ios-drizzle-outline',
+    '311': 'ios-drizzle-outline',
+    '312': 'ios-drizzle-outline',
+    '313': 'ios-drizzle-outline',
+    '314': 'ios-drizzle-outline',
+    '321': 'ios-drizzle-outline',
     
     '500': 'ios-rainy-outline',
     '501': 'ios-rainy-outline',
@@ -37,6 +37,7 @@ var iconNameByOwmCode = {
     '602': 'ios-snow-outline',
     '611': 'ios-snow-outline',
     '612': 'ios-snow-outline',
+    '613': 'ios-snow-outline',
     '615': 'ios-snow-outline',
     '616': 'ios-snow-outline',
     '620': 'ios-snow-outline',
@@ -50,25 +51,16 @@ var iconNameByOwmCode = {
     '741': 'ios-cloudy-outline',
     '751': 'ios-cloudy-outline',
     '761': 'ios-cloudy-outline',
+    '762': 'ios-cloudy-outline',
+    '771': 'ios-cloudy-outline',
+    '781': 'ios-cloudy-outline',
     
     '800': 'ios-sunny-outline',
+
     '801': 'ios-partly-sunny-outline',
     '802': 'ios-cloudy-outline',
     '803': 'ios-cloudy-outline',
     '804': 'ios-cloudy-outline',
-    
-    '903': 'ios-snow-outline',
-    '904': 'ios-flame-outline',
-    '905': 'ios-sunny-outline',
-    '906': 'ios-snow-outline',
-    
-    '950': 'ios-sunny-outline',
-    '951': 'ios-sunny-outline',
-    '952': 'ios-sunny-outline',
-    '953': 'ios-sunny-outline',
-    '954': 'ios-sunny-outline',
-    '955': 'ios-sunny-outline',
-    '956': 'ios-sunny-outline',
 };
 
 function getIconName(iconName) {
