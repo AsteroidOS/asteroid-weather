@@ -21,7 +21,7 @@
     <message id="id-no-data-sync">
         <location filename="../src/main.qml" line="89"/>
         <source>&lt;h3&gt;No data&lt;/h3&gt;Sync AsteroidOS with your phone.</source>
-        <translation>AsteroidOS  కి సంబంధించినా ఎటువంటి  సమాచారం మీ ఫోన్ లో లేదు</translation>
+        <translation type="unfinished">&lt;h3&gt;డేటా లేదు&lt;/h3&gt;మీ ఫోన్‌తో AsteroidOSని సమకాలీకరించండి</translation>
     </message>
     <message id="id-min">
         <location filename="../src/main.qml" line="145"/>
