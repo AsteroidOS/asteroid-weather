@@ -31,7 +31,7 @@
     <message id="id-max">
         <location filename="../src/main.qml" line="163"/>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>بیشینه:</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
