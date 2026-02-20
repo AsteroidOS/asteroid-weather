@@ -6,17 +6,17 @@
     <message id="id-today">
         <location filename="../src/main.qml" line="49"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Uèi</translation>
     </message>
     <message id="id-tomorrow">
         <location filename="../src/main.qml" line="53"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Deman</translation>
     </message>
     <message id="id-unknown">
         <location filename="../src/main.qml" line="84"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Desconegut</translation>
     </message>
     <message id="id-no-data-sync">
         <location filename="../src/main.qml" line="89"/>
@@ -36,7 +36,7 @@
     <message id="id-app-launcher-name">
         <location filename="asteroid-weather.desktop.h" line="6"/>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>Temps</translation>
     </message>
 </context>
 </TS>
