@@ -4,7 +4,7 @@ set_target_properties(asteroid-weather PROPERTIES PREFIX "")
 target_link_libraries(
 	asteroid-weather
 	PUBLIC
-		Asteroid::AsteroidApp
+		Asteroid::AsteroidApp6
 )
 
 install(
