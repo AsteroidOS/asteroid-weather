@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6.0)
 
 project(asteroid-weather
-	VERSION 0.0.1
+	VERSION 2.1.0
 	DESCRIPTION "Default weather app for AsteroidOS ")
 
 find_package(ECM REQUIRED NO_MODULE)
