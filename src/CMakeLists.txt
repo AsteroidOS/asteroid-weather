@@ -1,6 +1,10 @@
 add_library(asteroid-weather main.cpp resources.qrc)
 set_target_properties(asteroid-weather PROPERTIES PREFIX "")
 
+asteroid_app_qml_module(asteroid-weather
+	main.qml
+)
+
 target_link_libraries(
 	asteroid-weather
 	PUBLIC
